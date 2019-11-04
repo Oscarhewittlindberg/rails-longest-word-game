@@ -1,0 +1,24 @@
+<div class="container">
+<h1>New Game</h1>
+<ul >
+  <% @letters.each do |letter| %>
+  <li><%= letter.upcase%></li>
+  <% end %>
+</ul>
+  <form action="/score" method="post">
+    <h3>What is the longest word you can find?</h3>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <input type="text" name="attempt">
+    <input type="submit" value="Play">
+  </form>
+
+</div>
+
+
+
+<!-- <form action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  <input type="hidden" id="custId" name="custId" value="3487">
+  <input type="submit" value="Submit">
+</form> -->
